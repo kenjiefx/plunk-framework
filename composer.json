@@ -1,0 +1,21 @@
+{
+    "name": "kenjiefx/plunk-framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kenjiefx\\PlunkFramework\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kenji",
+            "email": "terradoflex@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "slim/slim": "4.*",
+        "guzzlehttp/psr7": "^2"
+    }
+}
