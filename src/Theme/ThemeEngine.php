@@ -1,14 +1,20 @@
 <?php
 declare(strict_types=1);
 namespace Kenjiefx\PlunkFramework\Theme;
-use Kenjiefx\PlunkFramework\View\View;
+use Kenjiefx\PlunkFramework\Theme\ThemeEntity;
 
 class ThemeEngine
 {
     public function __construct(
-        View $view
+        private ThemeEntity $ThemeEntity
         )
     {
-        echo $view->path();
+
     }
+
+    public function render()
+    {
+
+    }
+
 }

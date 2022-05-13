@@ -1,40 +1,34 @@
 <?php
 declare(strict_types=1);
 namespace Kenjiefx\PlunkFramework\Theme;
-use Kenjiefx\PlunkFramework\Theme\Entities\Index;
+use Kenjiefx\PlunkFramework\Theme\ThemeOptions;
+use Kenjiefx\PlunkFramework\Theme\ThemeModel;
 
+class ThemeEntity extends ThemeModel
+{
 
-class ThemeEntity {
-
-    private \ReflectionClass $entity;
-    private array $attr;
-    private string $themeName;
+    private string $entityName;
 
     public function __construct(
-        string $EntityClass
+        private ThemeOptions $ThemeOptions
         )
     {
-        $this->entity = new \ReflectionClass($EntityClass);
-        $this->attr = $this->entity->getAttributes();
+        parent::__construct(
+            themeName: $this->ThemeOptions->get()->theme()
+        );
+        $this->setName();
     }
 
-    public static function index()
+    private function setName()
     {
-        return new ThemeEntity(Index::class);
+        $this->entityName = $this->ThemeOptions->get()->entity();
     }
 
-    public function set(
-        string $themeName
-        )
-    {
-        $this->themeName = $themeName;
-    }
 
-    public function getPath()
-    {
-        foreach ($this->attr as $att) {
-            
-        }
-    }
+
+
+
+
+
 
 }

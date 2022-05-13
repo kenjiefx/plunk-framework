@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php use Kenjiefx\PlunkFramework\Test; ?> <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">

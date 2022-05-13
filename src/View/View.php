@@ -41,4 +41,9 @@ class View {
         return $this->theme->getPath();
     }
 
+    public function import()
+    {
+        return $this->theme->getImports();
+    }
+
 }
