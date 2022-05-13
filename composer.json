@@ -16,6 +16,8 @@
     "minimum-stability": "dev",
     "require": {
         "slim/slim": "4.*",
-        "guzzlehttp/psr7": "^2"
+        "guzzlehttp/psr7": "^2",
+        "psr/container": "2.0.x-dev",
+        "league/container": "4.x-dev"
     }
 }
