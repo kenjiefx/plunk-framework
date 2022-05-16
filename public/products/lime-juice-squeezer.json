@@ -1,0 +1,9 @@
+{
+    "id":1,
+    "title":"Lime Juice Squeezer",
+    "handle":"lime-juice-squuezer",
+    "price":{
+        "current":13,
+        "currency":"USD"
+    }
+}

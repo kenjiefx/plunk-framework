@@ -9,10 +9,14 @@ define('ROOT',__DIR__);
 require ROOT.'/vendor/autoload.php';
 
 $app = AppFactory::create();
+$router = new Router($app);
+$router->extend(Kenjiefx\PlunkFramework\ExternalRouter::ExampleExternalRouteExtension());
+
 $container = ContainerFactory::create();
 
+
 $plunk = new PlunkApp(
-    new Router($app),
+    $router,
     new Container($container)
 );
 $plunk->serve();
