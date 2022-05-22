@@ -31,8 +31,8 @@ function feed(
     string $name
     )
 {
-    if (!isset($GLOBALS["BUILD_DATA"]['feed'])) return null;
-    if ($GLOBALS["BUILD_DATA"]['feed']['name']!==$name) return;
+    if (!isset($GLOBALS["BUILD_DATA"]['feed'])) return [];
+    if ($GLOBALS["BUILD_DATA"]['feed']['name']!==$name) return [];
     return $GLOBALS["BUILD_DATA"]['feed']['data'];
 }
 

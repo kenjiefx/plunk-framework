@@ -55,6 +55,7 @@ class ThemeService {
         )
     {
         $path = ROOT."/".$sourcePath;
+        if (is_dir($path)) return $this;
         if (!file_exists($path)) return $this;
         $data = json_decode(file_get_contents($path),TRUE);
         if (empty($data))return $this;
