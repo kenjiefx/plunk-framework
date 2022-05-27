@@ -4,6 +4,14 @@ namespace Kenjiefx\PlunkFramework\App\Entities;
 
 class ThemeEntity {
 
+    public function setName(
+        string|null $name
+        )
+    {
+        $this->name = $name;
+        return $this;
+    }
+
     public function setPath()
     {
         $this->path = "/{$this->entity}s/{$this->name}.php";

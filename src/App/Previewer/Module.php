@@ -27,9 +27,10 @@ class Module extends Previewer implements PreviewerInterface {
         $this->setUri($uri->getQuery());
         $this->setEntity();
         return $this->BuildService->useTheme($this->query->get('theme'))
-                           ->useContent((string)$this->ThemeEntity)
-                           ->useSource($this->query->get('context'),$this->query->get('source'))
-                           ->build();
+                                  ->usePlugins($this->query->get('theme'))
+                                  ->useContent((string)$this->ThemeEntity)
+                                  ->useSource($this->query->get('context'),$this->query->get('source'))
+                                  ->build();
     }
 
 }

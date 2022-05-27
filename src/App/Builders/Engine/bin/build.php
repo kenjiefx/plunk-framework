@@ -1,4 +1,4 @@
-<?php
+<?php use Kenjiefx\PlunkFramework\ExternalPlugin as ImportablePlugin; require_once "C:/Users/Rom.T/github/plunk-framework/vendor/autoload.php";?><?php
 
 function module(
     string $name
@@ -49,11 +49,12 @@ function toJsonParsable(
 
 
 ?>
-<?php $GLOBALS["BUILD_DATA"] = json_decode('{"theme":{"name":"Plunk Slate","path":"\/home\/kenjie\/github\/plunk-framework\/themes\/Plunk Slate","target":"\/home\/kenjie\/github\/plunk-framework\/themes\/Plunk Slate\/modules\/test-module.php"},"feed":{"name":"","data":[]}}',TRUE); ?><!DOCTYPE html>
+<?php $GLOBALS["BUILD_DATA"] = json_decode('{"theme":{"name":"Plunk Slate","path":"C:\/Users\/Rom.T\/github\/plunk-framework\/themes\/Plunk Slate","target":"C:\/Users\/Rom.T\/github\/plunk-framework\/themes\/Plunk Slate\/modules\/test-module.php"},"feed":{"name":"","data":[]}}',TRUE); ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>Plunk Slate Theme</title>
+
         <script type="text/javascript">
             <?php echo toJsonParsable('Product',feed('product')); ?>
         </script>
@@ -63,5 +64,6 @@ function toJsonParsable(
     <body>
         Hello World! <br>
         <?php __content__(); ?>
+        <?php echo ImportablePlugin::usePlugin(); ?>
     </body>
 </html>

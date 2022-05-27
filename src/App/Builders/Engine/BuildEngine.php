@@ -21,6 +21,7 @@ class BuildEngine {
         )
     {
         $this->GlobalsConstructor->addTheme($path);
+        return $this;
     }
 
     public function setTarget(
@@ -28,29 +29,39 @@ class BuildEngine {
         )
     {
         $this->GlobalsConstructor->addTarget($targetPath);
+        return $this;
     }
 
-    public function feed(
+    public function setPlugins(
+        array $plugins
+        )
+    {
+        $this->ExecutableFactory->importPlugins($plugins);
+        return $this;
+    }
+
+    public function setFeed(
         array $dataFeed
         )
     {
         $this->dataFeed = $dataFeed;
         $this->GlobalsConstructor->addFeed($dataFeed);
+        return $this;
     }
 
-    public function start(
+    public function setImports(
         string $pathToIndex
         )
     {
-        $this->ExecutableFactory->importFunctions();
-        $this->ExecutableFactory->importGlobals($this->GlobalsConstructor->toArray());
-        $this->ExecutableFactory->importIndex($pathToIndex);
-        $this->ExecutableFactory->compile();
-        return $this->run();
+        $this->ExecutableFactory->importFunctions()
+                                ->importGlobals($this->GlobalsConstructor->toArray())
+                                ->importIndex($pathToIndex);
+        return $this;
     }
 
-    private function run()
+    public function runBuild()
     {
+        $this->ExecutableFactory->compile();
         return shell_exec('php '.__DIR__.'/bin/build.php');
     }
 

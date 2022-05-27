@@ -10,6 +10,7 @@ class ThemeService {
     private string $target = '';
     private array $feed = [];
     private string $context = '';
+    private array $plugins = [];
 
     public function __construct()
     {
@@ -25,7 +26,7 @@ class ThemeService {
             if (null===$theme||!is_dir($path))
                 throw new NotFoundException("Theme Not Found: {$theme}");
             $this->theme = $theme;
-            $this->path = $path;
+            $this->path = $this->toSafePath($path);
         } catch (\Exception $e) {
             echo $e->getMessage();
             exit();
@@ -41,7 +42,7 @@ class ThemeService {
             $path = $this->path.$target;
             if (null===$target||!file_exists($path))
                 throw new NotFoundException("Theme Content Not Found: {$target}");
-            $this->target = $path;
+            $this->target = $this->toSafePath($path);
         } catch (\Exception $e) {
             echo $e->getMessage();
             exit();
@@ -66,6 +67,24 @@ class ThemeService {
         return $this;
     }
 
+    public function loadPlugins()
+    {
+        $path = $this->path.'/imports.json';
+        if (file_exists($path)) {
+            try {
+                $plugins = json_decode(file_get_contents($path),TRUE);
+                if (null===$plugins) {
+                    throw new \Exception('Invalid Import JSON format');
+                }
+                $this->plugins = $plugins;
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+                exit();
+            }
+
+        }
+    }
+
     public function getTarget()
     {
         return $this->target;
@@ -87,6 +106,18 @@ class ThemeService {
             'context' => $this->context,
             'feed' => $this->feed
         ];
+    }
+
+    public function toSafePath(
+        string $path
+        )
+    {
+        return str_replace('\\', '/', $path);
+    }
+
+    public function getPlugins()
+    {
+        return $this->plugins;
     }
 
 

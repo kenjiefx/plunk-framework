@@ -4,40 +4,16 @@ namespace Kenjiefx\PlunkFramework\App\Builders\Asset;
 use Kenjiefx\PlunkFramework\App\Services\ThemeService;
 use Kenjiefx\PlunkFramework\App\Builders\BuildersInterface;
 use Kenjiefx\PlunkFramework\App\Builders\Engine\BuildEngine;
+use Kenjiefx\PlunkFramework\App\Builders\Builder;
 
-class AssetBuilder implements BuildersInterface {
+class AssetBuilder extends Builder implements BuildersInterface {
 
     public function __construct(
-        private ThemeService $ThemeService,
-        private BuildEngine $BuildEngine
+        protected ThemeService $ThemeService,
+        protected BuildEngine $BuildEngine
         )
     {
 
-    }
-
-    public function useTheme(
-        string|null $name
-        )
-    {
-        $this->ThemeService->setTheme($name);
-        return $this;
-    }
-
-    public function useContent(
-        string|null $target
-        )
-    {
-        $this->ThemeService->setTarget($target);
-        return $this;
-    }
-
-    public function useSource(
-        string|null $context,
-        string|null $source
-        )
-    {
-        $this->ThemeService->setSource($context,$source);
-        return $this;
     }
 
     public function build()

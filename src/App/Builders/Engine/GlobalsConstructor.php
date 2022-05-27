@@ -21,7 +21,7 @@ class GlobalsConstructor {
         )
     {
         $this->data['theme']['name'] = $name;
-        $this->data['theme']['path'] = ROOT."/themes/{$name}";
+        $this->data['theme']['path'] = $this->toSafePath(ROOT)."/themes/{$name}";
     }
 
     public function addTarget(
@@ -34,6 +34,13 @@ class GlobalsConstructor {
     public function toArray()
     {
         return $this->data;
+    }
+
+    public function toSafePath(
+        string $path
+        )
+    {
+        return str_replace('\\', '/', $path);
     }
 
 

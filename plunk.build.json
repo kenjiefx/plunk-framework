@@ -1,0 +1,13 @@
+{
+    "build":{
+        "products":{
+            "theme":"Plunk Slate",
+            "template":"product-page",
+            "feed":{
+                "context":"product",
+                "path":"/public/products"
+            },
+            "exportPath":"/public/products"
+        }
+    }
+}

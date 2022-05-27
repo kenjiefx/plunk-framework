@@ -11,3 +11,5 @@ http://127.0.0.1:3322/preview/module?theme=Plunk%20Slate&target=test-module
 
 Asset Loader
 http://127.0.0.1:3322/assets/style?theme=Plunk%20Slate&target=global.css
+
+Theme: City Lights
