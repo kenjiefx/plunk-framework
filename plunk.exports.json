@@ -1,5 +1,5 @@
 {
-    "build":{
+    "exports":{
         "products":{
             "theme":"Plunk Slate",
             "template":"product-page",

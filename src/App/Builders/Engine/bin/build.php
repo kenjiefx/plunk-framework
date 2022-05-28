@@ -1,4 +1,4 @@
-<?php use Kenjiefx\PlunkFramework\ExternalPlugin as ImportablePlugin; require_once "C:/Users/Rom.T/github/plunk-framework/vendor/autoload.php";?><?php
+<?php use Kenjiefx\PlunkFramework\ExternalPlugin as ImportablePlugin; require_once "/home/kenjie/github/plunk-framework/vendor/autoload.php";?><?php
 
 function module(
     string $name
@@ -49,7 +49,7 @@ function toJsonParsable(
 
 
 ?>
-<?php $GLOBALS["BUILD_DATA"] = json_decode('{"theme":{"name":"Plunk Slate","path":"C:\/Users\/Rom.T\/github\/plunk-framework\/themes\/Plunk Slate","target":"C:\/Users\/Rom.T\/github\/plunk-framework\/themes\/Plunk Slate\/modules\/test-module.php"},"feed":{"name":"","data":[]}}',TRUE); ?><!DOCTYPE html>
+<?php $GLOBALS["BUILD_DATA"] = json_decode('{"theme":{"name":"Plunk Slate","path":"\/home\/kenjie\/github\/plunk-framework\/themes\/Plunk Slate","target":"\/home\/kenjie\/github\/plunk-framework\/themes\/Plunk Slate\/templates\/product-page.php"},"feed":{"name":"product","data":{"id":1,"title":"Lime Juice Squeezer","handle":"lime-juice-squuezer","price":{"current":13,"currency":"USD"}}}}',TRUE); ?><!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
