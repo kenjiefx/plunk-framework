@@ -1,7 +1,7 @@
 {
+    "theme":"Plunk Slate",
     "exports":{
         "products":{
-            "theme":"Plunk Slate",
             "template":"product-page",
             "feed":{
                 "context":"product",

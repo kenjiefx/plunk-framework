@@ -30,18 +30,29 @@ class Parser {
                     'Invalid plunk.exports.json config file'
                 );
             }
+            if (!isset($exports['theme'])) {
+                throw new InvalidConfigException(
+                    'Invalid plunk.exports.json config file, requires theme'
+                );
+            }
             if (!isset($exports['exports'])) {
                 throw new InvalidConfigException(
                     'Invalid plunk.exports.json config file, unable to find exportable list'
                 );
             }
-            $this->manager->manage($exports);
+            $this->manager->useTheme($exports['theme']);
+            $this->manager->manage($exports['exports']);
             $this->manager->create();
         } catch (\Exception $e) {
             echo 'ExportException: '.$e->getMessage();
             exit();
         }
 
+    }
+
+    public function getManager()
+    {
+        return $this->manager;
     }
 
 
