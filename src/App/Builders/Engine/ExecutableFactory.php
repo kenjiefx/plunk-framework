@@ -50,6 +50,7 @@ class ExecutableFactory {
 
     public function compile()
     {
+        unlink(__DIR__.'/bin/build.php');
         file_put_contents(__DIR__.'/bin/build.php',$this->exe);
         return $this;
     }

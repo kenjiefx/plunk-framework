@@ -1,0 +1,9 @@
+{
+    "id":2,
+    "title":"Spoon Cup Device",
+    "handle":"spoon-cup-device",
+    "price":{
+        "current":14,
+        "currency":"USD"
+    }
+}
