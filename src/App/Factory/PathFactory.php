@@ -11,7 +11,7 @@ class PathFactory {
     {
         $pathObject = new Path();
         $pathObject->set()->path = $path;
-        return new $pathObject;
+        return $pathObject;
     }
 
 }

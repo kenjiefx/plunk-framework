@@ -41,6 +41,7 @@ class Preview implements AccessFacadeInterface {
              ->source()
              # Passing the page to our Build Repository
              ->page()
+             # Calling the build method
              ->build();
         return $this;
     }
@@ -56,6 +57,8 @@ class Preview implements AccessFacadeInterface {
     {
         $theme = $this->query->get('theme');
         $this->Page->theme()->set()->name = $theme;
+        $path = $this->PathFactory::create("/themes/{$theme}");
+        $this->Page->theme()->set()->path = $path;
         return $this;
     }
 

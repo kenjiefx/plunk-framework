@@ -11,7 +11,34 @@ class Path implements AccessFacadeInterface{
 
     public function __construct()
     {
-        
+
     }
+
+    public function isDir()
+    {
+        return is_dir(ROOT.$this->path);
+    }
+
+    public function isFile()
+    {
+        return is_file(ROOT.$this->path);
+    }
+
+    public function getContens()
+    {
+        return file_get_contents(ROOT.$this->path);
+    }
+
+    public function real()
+    {
+        return ROOT.$this->path;
+    }
+
+    public function raw()
+    {
+        return $this->path;
+    }
+
+
 
 }
