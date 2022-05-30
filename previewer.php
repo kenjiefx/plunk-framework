@@ -1,6 +1,6 @@
 <?php
 use Slim\Factory\AppFactory;
-use Kenjiefx\PlunkFramework\App\Factories\ContainerFactory;
+use Kenjiefx\PlunkFramework\App\Factory\ContainerFactory;
 use Kenjiefx\PlunkFramework\PlunkApp;
 use Kenjiefx\PlunkFramework\Router;
 use Kenjiefx\PlunkFramework\Exporter;
@@ -11,7 +11,7 @@ require ROOT.'/vendor/autoload.php';
 
 $app = AppFactory::create();
 $router = new Router($app);
-$router->extend(Kenjiefx\PlunkFramework\ExternalRouter::ExampleExternalRouteExtension());
+//$router->extend(Kenjiefx\PlunkFramework\ExternalRouter::ExampleExternalRouteExtension());
 
 $container = ContainerFactory::create();
 
